@@ -11,5 +11,5 @@ gamepad(r1:down):              user.foot_switch_down_event(2)
 gamepad(r1:up):                user.foot_switch_up_event(2)
 
 # Top button
-gamepad(dpad_up:down):              user.foot_switch_down_event(3)
-gamepad(dpad_up:up):                user.foot_switch_up_event(3)
+gamepad(select:down):              user.foot_switch_down_event(3)
+gamepad(select:up):                user.foot_switch_up_event(3)

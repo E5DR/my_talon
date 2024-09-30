@@ -107,45 +107,70 @@ ctx.matches = "mode: all"
 
 @ctx.action_class("user")
 class UserActions:
+
+    ########################################
+    # Top Switch:
+    # repeater
+    ########################################
+
     def foot_switch_top_down():
-        if scroll_reversed:
-            actions.user.mouse_scroll_down_continuous()
-        else:
-            actions.user.mouse_scroll_up_continuous()
+        print("top button")
+        actions.core.repeat_command(1)
 
     def foot_switch_top_up(held: bool):
-        if held:
-            actions.user.mouse_scroll_stop()
+        pass
+
+    ########################################
+    # Center Switch:
+    # mouse click
+    ########################################
 
     def foot_switch_center_down():
-        if scroll_reversed:
-            actions.user.mouse_scroll_up_continuous()
-        else:
-            actions.user.mouse_scroll_down_continuous()
-
-    def foot_switch_center_up(held: bool):
-        if held:
-            actions.user.mouse_scroll_stop()
-
-    def foot_switch_left_down():
+        print("center button")
         # global cron_job
         # cron_job = cron.after(
         #     f"{int(HOLD_TIMEOUT*1000)}ms", actions.user.quick_pick_show
         # )
         pass
 
-    def foot_switch_left_up(held: bool):
+    def foot_switch_center_up(held: bool):
         # global cron_job
         # cron.cancel(cron_job)
         # cron_job = None
         if not held:
             # actions.user.go_back()
-            actions.user.mouse_click()
+            actions.mouse_click(0)
+
+    ########################################
+    # Left Switch:
+    # scrolling
+    ########################################
+
+    def foot_switch_left_down():
+        print("left button")
+        if scroll_reversed:
+            actions.user.mouse_scroll_up_continuous()
+        else:
+            actions.user.mouse_scroll_down_continuous()
+
+    def foot_switch_left_up(held: bool):
+        if held:
+            actions.user.mouse_scroll_stop()
+
+    ########################################
+    # Right Switch:
+    # toggle talon
+    ########################################
 
     def foot_switch_right_down():
+        print("right button")
         pass
 
     def foot_switch_right_up(held: bool):
+        if not actions.speech.enabled():
+            actions.speech.enable()
+        else:
+            actions.speech.disable()
         pass
 
 
