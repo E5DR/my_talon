@@ -154,8 +154,9 @@ class UserActions:
             actions.user.mouse_scroll_down_continuous()
 
     def foot_switch_left_up(held: bool):
+        actions.user.mouse_scroll_stop()
         if held:
-            actions.user.mouse_scroll_stop()
+            pass
 
     ########################################
     # Right Switch:
