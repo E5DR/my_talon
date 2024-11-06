@@ -1,7 +1,7 @@
 from talon import Module, Context, actions, cron
 import time
 
-HOLD_TIMEOUT = 0.2
+HOLD_TIMEOUT = 0.35
 
 LEFT = 0
 CENTER = 1
@@ -168,11 +168,12 @@ class UserActions:
         pass
 
     def foot_switch_right_up(held: bool):
-        if not actions.speech.enabled():
-            actions.speech.enable()
-        else:
-            actions.speech.disable()
-        pass
+        if not held:
+            if not actions.speech.enabled():
+                actions.speech.enable()
+            else:
+                actions.speech.disable()
+            pass
 
 
 # ---------- Default non-sleep implementation ----------
