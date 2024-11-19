@@ -1,3 +1,7 @@
+
+face off: mode.disable("face")
+face on: mode.enable("face")
+
 face(raise_eyebrows): mouse_click()
 
 #face(pucker_lips_right): key(pagedown)

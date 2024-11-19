@@ -7,20 +7,21 @@ LEFT = 0
 CENTER = 1
 RIGHT = 2
 TOP = 3
+LEFT_RIGHT = 4
 
 DOWN = 0
 UP = 1
 
 mod = Module()
-current_state = [UP, UP, UP, UP]
-last_state = [UP, UP, UP, UP]
-timestamps = [0, 0, 0, 0]
+current_state = [UP, UP, UP, UP, UP]
+last_state = [UP, UP, UP, UP, UP]
+timestamps = [0, 0, 0, 0, 0]
 scroll_reversed = False
 cron_job = None
 
 
 def on_interval():
-    for key in range(4):
+    for key in range(5):
         if last_state[key] != current_state[key]:
             last_state[key] = current_state[key]
 
@@ -47,6 +48,8 @@ def call_down(key: int):
         actions.user.foot_switch_right_down()
     elif key == TOP:
         actions.user.foot_switch_top_down()
+    elif key == LEFT_RIGHT:
+        actions.user.foot_switch_left_right_down()
 
 
 def call_up(key: int, held: bool):
@@ -58,6 +61,8 @@ def call_up(key: int, held: bool):
         actions.user.foot_switch_right_up(held)
     elif key == TOP:
         actions.user.foot_switch_top_up(held)
+    elif key == LEFT_RIGHT:
+        actions.user.foot_switch_left_right_up(held)
 
 
 @mod.action_class
@@ -99,6 +104,14 @@ class Actions:
 
     def foot_switch_right_up(held: bool):
         """Foot switch button right:up"""
+
+    def foot_switch_left_right_down():
+        """Foot switch simultaneous buttons left+right:down"""
+        print("lr combo button")
+
+    def foot_switch_left_right_up(held: bool):
+        """Foot switch simultaneous buttons left+right:up"""
+        print("lr combo button")
 
 
 # ---------- Default implementation ----------
@@ -175,6 +188,18 @@ class UserActions:
                 actions.speech.disable()
             pass
 
+    ########################################
+    # Left + Right (simultaneous):
+    # toggle face gestures
+    ########################################
+
+    def foot_switch_left_right_down():
+        print("lr combo button")
+        pass
+        
+    def foot_switch_left_right_up(held: bool):
+        if not held:
+            actions.mode.toggle("face")
 
 # ---------- Default non-sleep implementation ----------
 ctx_eye_tracker = Context()
