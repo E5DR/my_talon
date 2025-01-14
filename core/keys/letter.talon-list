@@ -1,0 +1,33 @@
+list: user.letter
+# override community
+os: windows
+os: linux
+-
+# for common alternative spoken forms for letters, visit
+# https://talon.wiki/quickstart/improving_recognition_accuracy/#collected-alternatives-to-the-default-alphabet
+air: a
+bat: b
+cap: c
+drum: d
+each: e
+fine: f
+gust: g
+harp: h
+sit: i
+jane: j
+crunch: k
+look: l
+made: m
+near: n
+top: o
+pit: p
+quench: q
+red: r
+sun: s
+trap: t
+urge: u
+vest: v
+whale: w
+plex: x
+yank: y
+zip: z

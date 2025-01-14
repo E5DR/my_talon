@@ -1,0 +1,21 @@
+list: user.vocabulary
+# override community
+os: windows
+os: linux
+-
+N map: nmap
+under documented: under-documented
+nmap
+admin
+Cisco
+Citrix
+VPN
+DNS
+Minecraft
+talon
+add
+vosk
+conformer
+repo
+german
+read me: readme

@@ -1,0 +1,14 @@
+list: user.search_engine
+# override community
+os: windows
+os: linux
+-
+amazon: https://www.amazon.com/s/?field-keywords=%s
+google: https://www.google.com/search?q=%s
+map: https://maps.google.com/maps?q=%s
+scholar: https://scholar.google.com/scholar?q=%s
+wiki: https://en.wikipedia.org/w/index.php?search=%s
+german wiki: https://de.wikipedia.org/w/index.php?search=%s
+goose: https://duckduckgo.com/?t=ffab&q=%s&ia=web
+arch wiki: https://wiki.archlinux.org/index.php?search=%s
+talon repositories: https://search.talonvoice.com/search/?q=%s

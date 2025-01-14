@@ -1,0 +1,28 @@
+list: user.website
+# override community
+os: windows
+os: linux
+-
+talon home page: http://talonvoice.com
+talon slack: http://talonvoice.slack.com/messages/help
+talon wiki: https://talon.wiki/
+talon practice: https://chaosparrot.github.io/talon_practice/
+talon repositories: https://search.talonvoice.com/search/
+amazon: https://www.amazon.com/
+dropbox: https://dropbox.com/
+google: https://www.google.com/
+google calendar: https://calendar.google.com
+google maps: https://maps.google.com/
+google scholar: https://scholar.google.com/
+gmail: https://mail.google.com/
+github: https://github.com/
+gist: https://gist.github.com/
+wikipedia: https://en.wikipedia.org/
+german wikipedia: https://de.wikipedia.org/
+youtube: https://www.youtube.com/
+book meter: https://bookmeter.com/
+rango: https://github.com/david-tejada/rango?tab=readme-ov-file#open-in-a-new-tab
+sync thing: http://127.0.0.1:8384/
+arch wiki: https://wiki.archlinux.org/
+languagetool: https://languagetool.org/editor/new
+intranet: https://intranetportal.hs-esslingen.de/
